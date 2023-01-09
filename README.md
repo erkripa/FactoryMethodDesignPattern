@@ -1,6 +1,6 @@
 # Factory Method Design Pattern Flutter 
 
-A Factory Method Design Pattern Fluuter Projects 
+A Factory Method Design Pattern Flutter Projects 
 
 ### Usage
 
