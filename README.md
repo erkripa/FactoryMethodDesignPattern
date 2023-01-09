@@ -1,16 +1,49 @@
 # factory_method_pattern
 
-A new Flutter project.
+A Factory Method Design Pattern Fluuter Projects 
 
-## Getting Started
+### Usage
 
-This project is a starting point for a Flutter application.
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-A few resources to get you started if this is your first Flutter project:
+abstract class PlatformButton {
+  Widget build(VoidCallback onTap, Widget child);
+}
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+class AndroidBtn extends PlatformButton {
+  @override
+  Widget build(VoidCallback onTap, Widget child) {
+    return ElevatedButton(onPressed: onTap, child: child);
+  }
+}
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+class IOSBtn implements PlatformButton {
+  @override
+  Widget build(VoidCallback onTap, Widget child) {
+    return CupertinoButton(onPressed: onTap, child: child);
+  }
+}
+
+class ButtonFactory {
+  static PlatformButton getButton(TargetPlatform platform) {
+    switch (platform) {
+      case TargetPlatform.android:
+        return AndroidBtn();
+      case TargetPlatform.iOS:
+        return IOSBtn();
+      default:
+        return AndroidBtn();
+    }
+  }
+}
+### When You don't know which Platform is coming
+
+You can use this pattern :
+
+This returns basically Widget AnyWhere You can use this widgets.
+
+ButtonFactory.getButton(TargetPlatform.android).build(
+            () => log("On Tap Clicked"),
+            const Text("Clik Me"),
+          ),

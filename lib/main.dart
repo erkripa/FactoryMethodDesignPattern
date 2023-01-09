@@ -32,12 +32,14 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Factory Method Design Pattern"),
       ),
-      body: Column(children: [
-        ButtonFactory.getButton(TargetPlatform.android).build(
-          () => log(""),
-          const Text("Clik Me"),
-        ),
-      ]),
+      body: Column(
+        children: [
+          ButtonFactory.getButton(TargetPlatform.android).build(
+            () => log("On Tap Clicked"),
+            const Text("Clik Me"),
+          ),
+        ],
+      ),
     );
   }
 }
