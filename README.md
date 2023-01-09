@@ -1,10 +1,10 @@
-# factory_method_pattern
+# Factory Method Design Pattern Flutter 
 
 A Factory Method Design Pattern Fluuter Projects 
 
 ### Usage
 
-```
+```dart
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -46,7 +46,10 @@ You can use this pattern :
 
 This returns basically Widget AnyWhere You can use this widgets.
 
+```dart
 ButtonFactory.getButton(TargetPlatform.android).build(
             () => log("On Tap Clicked"),
             const Text("Clik Me"),
           ),
+          
+```
