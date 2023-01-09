@@ -4,6 +4,7 @@ A Factory Method Design Pattern Fluuter Projects
 
 ### Usage
 
+```
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -37,6 +38,8 @@ class ButtonFactory {
     }
   }
 }
+
+```
 ### When You don't know which Platform is coming
 
 You can use this pattern :
